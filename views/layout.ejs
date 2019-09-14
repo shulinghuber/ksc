@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Kingsgate Skating Club</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="KSC_logo.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .navbar-brand{
+      font-size: 12px;
+    }
+    /*
+    a.navbar-brand > span:hover{
+      color: #4169e1;
+    }
+    */
+    button.navbar-toggler > span:hover{
+      color: #4169e1;
+    }
+    @media (min-width: 767px){
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu{
+      margin-top: 0;
+      padding: 0;
+    }
+    .dropdown > .dropdown-toggle:active {
+      pointer-events: none;
+    }
+    }
+    .transparent {
+      background:#7f7f7f;
+      background:rgba(0,0,0,0.5);
+    }
+    .nopadding {
+      padding:0px;
+    }
+    ul.social {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    ul.social > li {
+      display: inline-block;
+    }
+
+    ul.social > li > a {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+        border-radius: 36px;
+        background-color: #222222;
+        color: #fff;
+    }
+
+    ul.social > li > a:hover {
+      text-decoration: none;
+      background-color: #4169e1;
+    }
+  </style>
+  <script>   
+    $(document).ready(function(){
+      var trigger = $('#nav div div ul li a'), container = $('#content');
+        if(trigger.length == 0) trigger = $('#nav div div ul li div a');      
+        trigger.on('click', function(){
+          var $this = $(this),
+              target = $this.data('target');             
+          if(target != "none"){
+            $('.navbar-collapse').collapse('hide');
+            container.load('ejs/' + target + '.ejs');
+          }
+          return true;
+        });
+    });
+    $('.navbar-nav > li ').hover(function(){
+      $(this).find('.dropdown-menu').slideToggle();
+    });
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top nopadding" id="nav">
+    <div class="container nopadding">
+      <a class="navbar-brand nopadding" href="/">
+        <img src="KSC_logo.png" style="width:70px;height:48px;" alt=""><span>Kingsgate Skating Club</span>
+      </a>
+      <ul class="social nopadding">
+        <li>
+          <a href="https://twitter.com/KingsgateSkate" title="KSC Twitter" target="_blank">
+            <span class="icon fa fa-twitter"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/KingsgateSkatingClub" title="KSC Facebook" target="_blank">
+            <span class="icon fa fa-facebook"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/kingsgateskatingclub?igshid=tyoj1p0jdfk9" title="KSC Instagram" target="_blank">
+            <span class="icon fa fa-instagram"></span>
+          </a>
+        </li>
+      </ul>
+      <button class="navbar-toggler" style="padding:3px" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-navicon" style="font-size:16px"></span>
+      </button>
+      <div class="collapse navbar-collapse nopadding" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto ">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle nopadding" href="#" data-target="none" id="dropMenuAbout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              About
+            </a>
+            <div class="dropdown-menu nopadding" aria-labelledby="dropMenuAbout">
+              <a class="dropdown-item" href="#" data-target="about_news">Newsletters</a>
+              <a class="dropdown-item" href="#" data-target="about_docs">Documents</a>
+              <a class="dropdown-item" href="#" data-target="about_apparel">Club Apparel</a>
+              <a class="dropdown-item" href="#" data-target="about_contact">Contact Us</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle nopadding" href="#" data-target="none" id="dropMenuSchedule" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Schedules
+            </a>
+            <div class="dropdown-menu nopadding" aria-labelledby="dropMenuSchedule">
+              <a class="dropdown-item" href="#" data-target="schedule_club">Club Schedule</a>
+              <a class="dropdown-item" href="#" data-target="schedule_rink">Rink Schedule</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nopadding" href="#" data-target="membership">Membership</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nopadding" href="#" data-target="testing">Testing</a>
+          </li>
+        </ul>    
+      </div>
+    </div>
+    </nav>
+    
+
+    <div id="content">
+      <%- body %>
+    </div>
+</body>
+</html>

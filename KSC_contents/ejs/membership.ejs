@@ -1,0 +1,207 @@
+<style>
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+
+li#m1 {
+  font-weight: bold;
+  padding: 0;
+  margin:0;
+}
+.mb-0 > a {
+  display: block;
+  position: relative;
+  text-underline-position: under; 
+  padding: 10px; 
+}
+.mb-0 > a:after {
+  content: "\f078"; /* fa-chevron-down */
+  font-family: 'FontAwesome';
+  position: absolute;
+  right: 0;
+}
+.mb-0 > a[aria-expanded="true"]:after {
+  content: "\f077"; /* fa-chevron-up */
+}
+
+.mCard {
+  padding: 0px; 
+}
+
+</style>
+<script>
+  $('#accordion').on('shown.bs.collapse', e => {
+    $('html, body').animate(
+      {
+        scrollTop: $(e.target)
+          .prev()
+          .offset().top - 44
+      },
+      1000
+    );
+  });
+</script>
+<div class="container">
+  <div class="content"><br>
+    <h5>Membership</h5><hr>    
+    <p>For renewals and new memberships, please use our on-line membership site which can be accessed by clicking <a href="https://comp.entryeeze.com/Membership/Welcome.aspx?cid=87" target="_blank">here</a>.</p>
+    <div id="accordion">
+      <div class="card">     
+        <div class="card-header mCard" id="heading-1" style="padding:0">
+          <h5 class="mb-0">
+            <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Membership Categories
+            </a>
+          </h5>
+        </div>      
+        <div id="collapseOne" class="collapse" data-parent="#accordion" aria-labelledby="heading-1">
+          <div class="card-body">
+          <ul style="list-style-type:square">
+            <li id="m1">Learn to Skate USA (formerly know as Basic Skills)</li>
+            For skaters in Basic 1-8 and Freeskate 1-6 who want to skate during Freestyle skating sessions. This is a limited membership — the benefits are discounted punch cards for ice time and participation in in-house and non-qualifying competitions, ice shows and other events.
+            <li id="m1">Junior Member</li>
+            For skaters under 18 years old. Junior Members receive all the benefits of Kingsgate Skating Club, in addition to the privileges authorized in the USFS Constitution, with the exception of voting or holding office. Junior Members may have a parent vote for them.
+            <li id="m1">Senior Member</li>
+            For skaters 18 to 54 years old. Senior Members receive all the benefits of Kingsgate Skating Club, in addition to the privileges authorized in the USFS Constitution. Senior Members have voting privileges and can hold office.
+            <li id="m1">Plus 55 Member</li>
+            For skaters 55 years and older. Plus 55 Members receive all the benefits of Senior Members, with reduced membership dues.
+            <li id="m1">Non-Skating Parent</li>
+            For non-skating parents of Junior Members who wish to join Kingsgate Skating Club. The benefits are voting privileges and holding office. LTS parents can also join.
+            <li id="m1">Associate Member</li>
+            For full USFS members of another club who would like to enjoy some benefits of Kingsgate Skating Club. Associate Members receive discounted punch cards for ice time and pay home club test fees. Associate Members cannot vote.
+            <li id="m1">Professional Club Member</li>
+            For coaches who derive an income from skating and teach private students. Coaches must go through the USFS coach registration process and receive the &quot;green light&quot; before applying for membership.
+          </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">  
+        <div class="card-header mCard">
+          <h5 class="mb-0">
+            <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Membership Benefits
+            </a>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+          <table id="t01">
+              <tr>
+                <th>Benefits</th>
+                <th>Learn to Skate</th> 
+                <th>Full Membership *</th>
+              </tr>
+              <tr>
+                <td>Summer Skating School – member rates</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>Skate Swap – in Oct &amp; Feb (online in the works)</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>Annual Meeting – Dinner &amp; Recognition</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>In-House skating events (separate fees apply) Winter Solstice, Fiesta Skate, Summer Sizzle</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>Equipment – harness, off-ice, exercise</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>Club Swag – water bottle, towel, CD cases, etc.</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>Voting rights for Club</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>PNIC membership &amp; Championship event</td>
+                <td>&#x2713;</td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>(Skater scholarship)**</td>
+                <td>&#x2713;</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Test Sessions – bi-Monthly - Members get 1 st priority for scheduling</td>
+                <td></td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>Skate at Regionals, non-test &amp; up</td>
+                <td></td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>Skater Grants for Regionals &amp; up (Adults too)</td>
+                <td></td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>Send-off events</td>
+                <td></td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>Voting rights for USFSA &amp; Governing Council</td>
+                <td></td>
+                <td>&#x2713;</td>
+              </tr>
+              <tr>
+                <td>SKATING Magazine</td>
+                <td></td>
+                <td>&#x2713;</td>
+              </tr>
+            </table><br/>
+            <p>*  Full Memberships are: Senior, Junior, Plus 55, Professional, Collegiate, &amp; Non-Skating Parent (if the skater is a Full member). Associates are full members through their Home club.</p>
+            <p>** The Board is developing an “emergency fund” for Learn to Skate (Basic 1 – Non-test) skaters who have a sudden financial hardship and could use the help to pay for an In-House event like Winter Solstice or Fiesta Skate.</p>    
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header mCard">
+          <h5 class="mb-0">
+            <a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Membership Chair
+            </a>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+          Contact Nikki at nikkishuling@gmail.com
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+</div>

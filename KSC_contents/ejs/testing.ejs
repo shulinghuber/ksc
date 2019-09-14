@@ -1,0 +1,100 @@
+<style>
+.mb-0 > a {
+display: block;
+position: relative;
+text-underline-position: under; 
+padding: 10px; 
+}
+.mb-0 > a:after {
+  content: "\f078"; /* fa-chevron-down */
+  font-family: 'FontAwesome';
+  position: absolute;
+  right: 0;
+}
+.mb-0 > a[aria-expanded="true"]:after {
+  content: "\f077"; /* fa-chevron-up */
+}
+.mCard {
+  padding: 0px; 
+}
+</style>
+<script>
+  $('#accordion').on('shown.bs.collapse', e => {
+    $('html, body').animate(
+      {
+        scrollTop: $(e.target)
+          .prev()
+          .offset().top - 44
+      },
+      1000
+    );
+  });
+</script>
+<div class="container">
+  <div class="content"><br>
+    <h5>Testing</h5><hr> 
+    <p>For registering a test, please use our on-line membership site which can be accessed by clicking <a href="https://comp.entryeeze.com/Membership/Welcome.aspx?cid=87" target="_blank">here</a>.</p>
+    <p>Members log-in to their account and click on the Test Sessions button near the top and middle of the page.</p>
+    <p>Non-members interested in testing at Kingsgate will have a button in the upper left-hand corner of the Membership Welcome page.</p>
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header mCard">
+          <h5 class="mb-0">
+            <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Testing Information
+            </a>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+          <ul style="list-style-type:square">
+            <li>Registration and payment is online through our Membership site on Entryeeze – non-member fees are included.
+            </li>
+            <li>Deadlines are generally 2 weeks before the Test Session or as soon as all time slots are filled. 
+            </li>
+            <li>Fees are nonrefundable after the sign-up deadline except in the case of serious injury or illness. 
+            </li>
+            <li>Application priority is given to KSC members in the order received, followed by members from other clubs.
+            </li>
+            <li>Test schedules will be posted 7 days prior to the test date – check with your Coach.
+            </li>
+            <li>All members of clubs other than Kingsgate Skating Club must pay an additional $20.
+            </li>
+            <li>All Kingsgate Skating Club members testing at other clubs are required to have a permission from the test chair to submit when they register.
+            </li>
+          </ul>
+           </div>
+        </div>
+      </div> 
+      <div class="card">
+        <div class="card-header mCard">
+          <h5 class="mb-0">
+            <a role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            What is a Test Session?
+            </a>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            <p>Testing means learning a specific set of Moves or Skills and performing them in front of a Judge or panel of Judges. Skaters can either earn a Pass or a Re-try depending on how well they showed mastery of those skills. These Official Test Sessions are for skaters who have goals beyond the Learn-To-Skate Levels. Skaters of all ages can test.  Some skaters test in order to compete at higher levels and some skaters use the Tests as a goal to improve their abilities, but chose not to compete.</p>
+            <p>If you have questions, start by asking your or your child’s Coach.  Next, you could contact the Test Chair.</p>
+          </div>
+        </div>
+      </div> 
+      <div class="card">
+        <div class="card-header mCard">
+          <h5 class="mb-0">
+            <a role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Test Chair
+            </a>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+          Contact Shawna at sk8scooter@hotmail.com
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
