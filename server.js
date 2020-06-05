@@ -18,6 +18,12 @@ app.get("/", function(req, res) {
 app.get("/about", function(req, res) {
     res.render("about");
 });
+/*
 app.listen(3000, function() {
     console.log("server is listening!!!");
 });
+*/
+
+var https = require('https');
+var http = require('http');
+http.createServer(app).listen(process.env.PORT, 'localhost');
